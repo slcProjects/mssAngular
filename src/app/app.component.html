@@ -1,24 +1,32 @@
+<div class="header">
+  <h1 class="title"><abbr title="Measurement of Software Similarity">Moss</abbr> App - {{ message }}</h1>
+</div>
 
 <div class="container">
-  <h1 class="title">App{{ message }}</h1>
+  <div *ngIf="uploadingTags">
+    <div class="form-group">
+      <label for="selectOption">Select a language:</label>
+      <select id="selectOption" class="form-control" [(ngModel)]="selectedOption">
+        <option value="csharp">C Sharp</option>
+        <option value="cc">C++</option>
+        <option value="javascript">JavaScript</option>
+        <option value="java">Java</option>
+      </select>
+    </div>
 
-  <div class="form-group">
-    <label for="selectOption">Select an language:</label>
-    <select id="selectOption" class="form-control" [(ngModel)]="selectedOption">
-      <option value="csharp">C Sharp</option>
-      <option value="cc">C++</option>
-      <option value="javascript">JavaScript</option>
-      <option value="java">Java</option>
-    </select>
+    <div class="form-group">
+      <label for="fileInput">Select Files:</label>
+      <input id="fileInput" type="file" (change)="onFileSelected($event)" multiple directory />
+      <button class="btn btn-primary" (click)="onUpload()">Upload</button>
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="fileInput">Select Files:</label>
-    <input id="fileInput" type="file" (change)="onFileSelected($event)" multiple directory />
-    <button class="btn btn-primary" (click)="onUpload()">Upload</button>
+  <div class="content">
+    <a href="{{ link }}" class="nice-link" *ngIf="link" target="_blank">{{ link }}</a>
+    <p class="uploaded-link" *ngIf="sent">{{ sent }}</p>
   </div>
+</div>
 
-  <div>
-    <p class="uploaded-link" *ngIf="link">{{ link }}</p>
-  </div>
+<div class="footer">
+  <p>Colin Graves - SLC CPA</p>
 </div>

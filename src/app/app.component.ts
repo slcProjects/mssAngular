@@ -15,8 +15,11 @@ export class AppComponent {
   data: any;
   message: string = 'Hello, world!';
   link: string = "";
+  sent: string = "";
   selectedFiles!: FileList;
   selectedOption: string = "cs";
+  uploadingTags: boolean = true;
+
 
 
 
@@ -46,16 +49,27 @@ export class AppComponent {
         console.log("file is " + this.selectedFiles[i]);
         formData.append('files', this.selectedFiles[i]);
       }
+      this.uploadingTags = false;
+      this.message = " Uploading ";
+
+      this.sent = "waiting for server, this may take  few moments";
+
 
       this.apiService.uploadFiles(formData,this.selectedOption)
         .subscribe(
           (response) => {
             this.link = response;
+            this.sent = "";
+
+            this.message = " Complete";
+
 
             console.log('Upload successful');
           },
           (error) => {
             console.error('Upload error:', error);
+            this.sent = "Error occurred, please contact cgraves@sl.on.ca";
+
             // Handle error response
           },
           () => {

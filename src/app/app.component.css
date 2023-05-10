@@ -1,8 +1,37 @@
-.container {
-    max-width: 500px;
-    margin: 0 auto;
+.header {
+    max-width: 600px; /* Adjust the desired width */
+
+    background-color: #333;
+    color: #fff;
     padding: 20px;
+    text-align: center;
   }
+  
+  .footer {
+    max-width: 600px; /* Adjust the desired width */
+
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 600px; /* Adjust the desired width */
+    padding: 20px; /* Adds padding to the container */
+    background-color: #f2f2f2;
+  }
+  
+  
+  .content {
+    margin-bottom: 20px;
+  }
+  
+  /* Add any other CSS styles as needed */
+  
+
+
+
   
   .title {
     font-size: 24px;
@@ -41,5 +70,13 @@
   .uploaded-link {
     margin-top: 20px;
     font-size: 16px;
+  }
+  
+
+  .nice-link {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+    /* Add any other styles you want */
   }
   

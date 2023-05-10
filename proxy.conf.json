@@ -1,7 +1,7 @@
 {
     "/api": {
-
-      "target": "http://3.23.100.157:8080",
+      
+      "target": "http://msscpaspring-env.eba-h2sndt6n.us-east-2.elasticbeanstalk.com",
       "secure": false
     }
   }
