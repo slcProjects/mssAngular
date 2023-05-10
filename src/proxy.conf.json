@@ -1,7 +1,0 @@
-{
-    "/api": {
-      "target": "http://msswebappgraves-env.eba-3jjukukm.us-east-2.elasticbeanstalk.com/",
-      "secure": false
-    }
-  }
-  
