@@ -12,6 +12,7 @@ import { of } from 'rxjs'
 export class AppComponent {
   data: any;
   message: string = 'Hello, world!';
+  link: string = "link";
   selectedFiles!: FileList;
 
 
@@ -45,6 +46,8 @@ export class AppComponent {
       this.apiService.uploadFiles(formData)
         .subscribe(
           (response) => {
+            this.link = response;
+
             console.log('Upload successful');
           },
           (error) => {
