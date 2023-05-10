@@ -1,13 +1,24 @@
-<h1>{{ message }}</h1>
 
+<div class="container">
+  <h1 class="title">App{{ message }}</h1>
 
+  <div class="form-group">
+    <label for="selectOption">Select an language:</label>
+    <select id="selectOption" class="form-control" [(ngModel)]="selectedOption">
+      <option value="csharp">C Sharp</option>
+      <option value="cc">C++</option>
+      <option value="javascript">JavaScript</option>
+      <option value="java">Java</option>
+    </select>
+  </div>
 
-<div>
-    <input type="file" (change)="onFileSelected($event)" multiple directory />
-    <button (click)="onUpload()">Upload</button>
+  <div class="form-group">
+    <label for="fileInput">Select Files:</label>
+    <input id="fileInput" type="file" (change)="onFileSelected($event)" multiple directory />
+    <button class="btn btn-primary" (click)="onUpload()">Upload</button>
   </div>
 
   <div>
-
-    {{ link }}
+    <p class="uploaded-link" *ngIf="link">{{ link }}</p>
   </div>
+</div>

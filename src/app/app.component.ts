@@ -7,13 +7,17 @@ import { of } from 'rxjs'
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+
 })
 export class AppComponent {
   data: any;
   message: string = 'Hello, world!';
-  link: string = "link";
+  link: string = "";
   selectedFiles!: FileList;
+  selectedOption: string = "cs";
+
 
 
   constructor(private apiService: ApiService) { }
@@ -43,7 +47,7 @@ export class AppComponent {
         formData.append('files', this.selectedFiles[i]);
       }
 
-      this.apiService.uploadFiles(formData)
+      this.apiService.uploadFiles(formData,this.selectedOption)
         .subscribe(
           (response) => {
             this.link = response;

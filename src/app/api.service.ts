@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,8 +17,10 @@ export class ApiService {
 
   }
 
-  uploadFiles(formData: FormData) {
+  uploadFiles(formData: FormData, selectedOption: string) {
     console.log("uploadFiles being called");
+    formData.append('selectedOption', selectedOption);
+
 
     return this.http.post('/api/upload',formData, { responseType: 'text' });
 
