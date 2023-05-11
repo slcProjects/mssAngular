@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mss-app",
+            "outputPath": "dist/mssApp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
