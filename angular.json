@@ -62,12 +62,12 @@
           "configurations": {
             "production": {
               "browserTarget": "mssApp:build:production",
-              "proxyConfig": "proxy.conf.json", // Add this line
+              "proxyConfig": "proxy.conf.json"
 
             },
             "development": {
               "browserTarget": "mssApp:build:development",
-              "proxyConfig": "proxy.conf.json", // Add this line
+              "proxyConfig": "proxy.conf.json"
 
             }
           },
