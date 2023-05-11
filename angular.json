@@ -57,13 +57,18 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mssApp:build:production"
+              "browserTarget": "mssApp:build:production",
+              "proxyConfig": "proxy.conf.json", // Add this line
+
             },
             "development": {
-              "browserTarget": "mssApp:build:development"
+              "browserTarget": "mssApp:build:development",
+              "proxyConfig": "proxy.conf.json", // Add this line
+
             }
           },
           "defaultConfiguration": "development"
